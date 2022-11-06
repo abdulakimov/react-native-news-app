@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-news-app",
+    "name": "Today.uz",
     "slug": "react-native-news-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.xurshidbek.reactnativenewsapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "33b22c7b-f130-4b8f-8796-4f5865816776"
+      }
     }
   }
 }
