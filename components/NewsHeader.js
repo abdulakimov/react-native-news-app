@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import moment from "moment/moment";
 import { urlFor } from "../sanity";
-import { ICONS } from "../assets";
+import { ICONS, IMAGES } from "../assets";
 import { useNavigation } from "@react-navigation/native";
 
 const NewsHeader = ({ data }) => {
@@ -16,9 +16,11 @@ const NewsHeader = ({ data }) => {
 
       <View className="w-full h-[250px]">
         <Image
-          source={{
-            uri: urlFor(data[8]?.image).url(),
-          }}
+          source={
+            data[8]?.image
+              ? { uri: urlFor(data[8]?.image).url() }
+              : IMAGES.banner
+          }
           resizeMode="cover"
           className="w-full h-full"
         />

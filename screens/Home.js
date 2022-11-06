@@ -58,8 +58,8 @@ const Home = () => {
             <NewsFeed data={news} />
           </View>
         ) : (
-          <View className="flex-1 justify-center items-center font-extrabold text-2xl">
-            Internet yo'q
+          <View className="flex-1 justify-center items-center ">
+            <Text className="font-extrabold text-2xl">Internet yo'q</Text>
           </View>
         )}
       </ScrollView>

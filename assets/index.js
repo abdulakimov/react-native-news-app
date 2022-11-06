@@ -5,6 +5,8 @@ import share from "./icons/share.png";
 import eye from "./icons/eye.png";
 import circle from "./icons/rec.png";
 
+import banner from "./images/banner.jpg";
+
 export const ICONS = {
   calendar,
   bookmark,
@@ -12,4 +14,8 @@ export const ICONS = {
   share,
   eye,
   circle,
+};
+
+export const IMAGES = {
+  banner,
 };
