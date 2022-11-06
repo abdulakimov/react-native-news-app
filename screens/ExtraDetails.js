@@ -5,7 +5,7 @@ import moment from "moment/moment";
 import { ICONS } from "../assets";
 import NewsCard from "../components/NewsCard";
 
-const Details = ({ route, navigation }) => {
+const ExtraDetails = ({ route, navigation }) => {
   const data = route.params;
 
   const [news, setNews] = useState([]);
@@ -141,7 +141,6 @@ const Details = ({ route, navigation }) => {
                 image={item.image}
                 title={item.title}
                 path="Details"
-                nested={true}
               />
             ))}
           </View>
@@ -151,4 +150,4 @@ const Details = ({ route, navigation }) => {
   );
 };
 
-export default Details;
+export default ExtraDetails;

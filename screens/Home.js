@@ -3,11 +3,12 @@ import {
   Text,
   StatusBar,
   SafeAreaView,
-  Platform,
   ScrollView,
+  RefreshControl,
 } from "react-native";
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
+import NetInfo from "@react-native-community/netinfo";
 
 import NewsHeader from "../components/NewsHeader";
 import NewsFeed from "../components/NewsFeed";
@@ -15,6 +16,12 @@ import NewsFeed from "../components/NewsFeed";
 import { client } from "../sanity";
 
 const Home = () => {
+  const [connected, setConnected] = useState(false);
+
+  NetInfo.fetch().then((state) => {
+    setConnected(state.isConnected);
+  });
+
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -45,8 +52,16 @@ const Home = () => {
         </View>
       </View>
       <ScrollView>
-        <NewsHeader data={news} />
-        <NewsFeed data={news} />
+        {connected ? (
+          <View>
+            <NewsHeader data={news} />
+            <NewsFeed data={news} />
+          </View>
+        ) : (
+          <View className="flex-1 justify-center items-center font-extrabold text-2xl">
+            Internet yo'q
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );

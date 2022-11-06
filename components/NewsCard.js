@@ -4,15 +4,17 @@ import { useNavigation } from "@react-navigation/native";
 import { urlFor } from "../sanity";
 import { ICONS } from "../assets";
 
-const NewsCard = ({ image, date, title, data }) => {
+const NewsCard = ({ image, date, title, data, nested }) => {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("Details", data)}
+      onPress={() =>
+        navigation.navigate(nested ? "ExtraDetails" : "Details", data)
+      }
       activeOpacity={0.5}
       className="flex-row items-center w-full h-[100px] mt-3  "
-      style={{ borderBottomColor: "#eee", borderBottomWidth: 1 }}
+      style={{ borderBottomColor: "#0E2769", borderBottomWidth: 0.5 }}
     >
       <Image
         source={{ uri: urlFor(image).url() }}

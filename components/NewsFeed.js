@@ -11,6 +11,7 @@ const NewsFeed = ({ data }) => {
           image={item?.image}
           title={item.title}
           date={item._createdAt}
+          nested={false}
         />
       ))}
     </View>
