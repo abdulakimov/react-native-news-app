@@ -27,7 +27,7 @@ const Details = ({ route, navigation }) => {
   }, []);
 
   return (
-    <View>
+    <View className="flex-1 bg-white">
       {/* Details header */}
 
       <View
@@ -122,7 +122,7 @@ const Details = ({ route, navigation }) => {
 
         {/* News */}
 
-        <View className="mb-20 pt-3">
+        <View className="mb-5 pt-3">
           <View className="bg-gray-200 p-5 w-full flex-row items-center">
             <Image
               source={ICONS.circle}
